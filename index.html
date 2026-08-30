@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Landslide Risk Monitoring System</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#172033;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(135deg,#0b3954,#087e8b);
+    color:white;
+    padding:18px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-icon{
+    font-size:35px;
+}
+
+.logo h1{
+    font-size:20px;
+}
+
+.logo p{
+    font-size:12px;
+    opacity:.8;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+/* HERO */
+.hero{
+    padding:70px 6%;
+    background:linear-gradient(120deg,#e7f8f7,#eef5ff);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+}
+
+.hero-text{
+    max-width:650px;
+}
+
+.badge{
+    display:inline-block;
+    background:#d8f3f0;
+    color:#087e8b;
+    padding:8px 15px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:18px;
+}
+
+.hero h2{
+    font-size:42px;
+    line-height:1.15;
+    margin-bottom:18px;
+}
+
+.hero h2 span{
+    color:#087e8b;
+}
+
+.hero p{
+    color:#586174;
+    line-height:1.7;
+}
+
+.hero-card{
+    background:white;
+    padding:28px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,.1);
+    width:320px;
+}
+
+.hero-card h3{
+    margin-bottom:18px;
+}
+
+.status{
+    display:flex;
+    justify-content:space-between;
+    margin:13px 0;
+    padding:12px;
+    background:#f6f8fb;
+    border-radius:10px;
+}
+
+/* SECTION */
+section{
+    padding:55px 6%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-title h2{
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.section-title p{
+    color:#687286;
+}
+
+/* DASHBOARD CARDS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:17px;
+    box-shadow:0 7px 25px rgba(0,0,0,.07);
+}
+
+.card-icon{
+    font-size:30px;
+    margin-bottom:12px;
+}
+
+.card h3{
+    font-size:28px;
+}
+
+.card p{
+    color:#697386;
+    margin-top:7px;
+    font-size:14px;
+}
+
+.green{border-left:5px solid #2ca66f;}
+.yellow{border-left:5px solid #f2b134;}
+.red{border-left:5px solid #e05252;}
+.blue{border-left:5px solid #4385d4;}
+
+/* MAIN GRID */
+.main-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:25px;
+}
+
+/* MAP */
+.map{
+    height:430px;
+    border-radius:18px;
+    position:relative;
+    overflow:hidden;
+    background:
+    linear-gradient(135deg,#b9d9b1,#d8e9bd,#9cc7a0);
+}
+
+.map::before{
+    content:"NORTHEAST INDIA";
+    position:absolute;
+    top:25px;
+    left:25px;
+    color:#315c36;
+    font-size:24px;
+    font-weight:bold;
+    opacity:.7;
+}
+
+.map-line{
+    position:absolute;
+    width:80%;
+    height:2px;
+    background:rgba(255,255,255,.8);
+    transform:rotate(-25deg);
+    top:45%;
+    left:10%;
+}
+
+.marker{
+    position:absolute;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    border:4px solid white;
+    box-shadow:0 3px 12px rgba(0,0,0,.3);
+    cursor:pointer;
+}
+
+.marker::after{
+    content:"";
+    position:absolute;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:white;
+    top:3px;
+    left:3px;
+}
+
+.marker.red-marker{background:#e05252;}
+.marker.yellow-marker{background:#f2b134;}
+.marker.green-marker{background:#2ca66f;}
+
+.m1{top:30%;left:55%;}
+.m2{top:50%;left:65%;}
+.m3{top:65%;left:45%;}
+.m4{top:40%;left:35%;}
+.m5{top:70%;left:72%;}
+
+.map-label{
+    position:absolute;
+    bottom:20px;
+    left:20px;
+    background:rgba(255,255,255,.9);
+    padding:13px 18px;
+    border-radius:10px;
+    font-size:13px;
+}
+
+/* ALERTS */
+.alert{
+    padding:18px;
+    border-radius:12px;
+    margin-bottom:14px;
+}
+
+.alert strong{
+    display:block;
+    margin-bottom:6px;
+}
+
+.alert p{
+    font-size:13px;
+}
+
+.alert-high{
+    background:#ffe4e4;
+    color:#a52c2c;
+}
+
+.alert-medium{
+    background:#fff1d2;
+    color:#9a6900;
+}
+
+.alert-low{
+    background:#def6e9;
+    color:#26704c;
+}
+
+/* PREDICTION */
+.prediction{
+    background:linear-gradient(135deg,#0b3954,#087e8b);
+    color:white;
+    border-radius:20px;
+    padding:35px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-top:25px;
+}
+
+label{
+    font-size:14px;
+    font-weight:bold;
+}
+
+input,select{
+    width:100%;
+    margin-top:8px;
+    padding:13px;
+    border:none;
+    border-radius:9px;
+    outline:none;
+}
+
+.predict-btn{
+    width:100%;
+    margin-top:25px;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#f2b134;
+    color:#172033;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.predict-btn:hover{
+    opacity:.9;
+}
+
+.result{
+    display:none;
+    margin-top:25px;
+    background:white;
+    color:#172033;
+    padding:25px;
+    border-radius:15px;
+}
+
+.risk-circle{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:10px solid #e05252;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    font-weight:bold;
+    margin:15px auto;
+}
+
+/* ANALYSIS */
+.analysis-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.chart{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+}
+
+.bar{
+    margin:20px 0;
+}
+
+.bar-title{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:7px;
+    font-size:14px;
+}
+
+.bar-bg{
+    height:13px;
+    background:#e8edf3;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.bar-fill{
+    height:100%;
+    border-radius:10px;
+}
+
+.fill1{width:82%;background:#e05252;}
+.fill2{width:68%;background:#f2b134;}
+.fill3{width:52%;background:#4385d4;}
+.fill4{width:37%;background:#2ca66f;}
+
+/* TABLE */
+.table-box{
+    overflow-x:auto;
+    background:white;
+    border-radius:18px;
+    padding:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:15px;
+    text-align:left;
+    border-bottom:1px solid #e7eaf0;
+    font-size:14px;
+}
+
+th{
+    background:#f5f8fb;
+}
+
+.risk-high{
+    color:#d53e3e;
+    font-weight:bold;
+}
+
+.risk-medium{
+    color:#bd8300;
+    font-weight:bold;
+}
+
+.risk-low{
+    color:#278154;
+    font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+    background:#0b3954;
+    color:white;
+    padding:35px 6%;
+    text-align:center;
+}
+
+footer p{
+    opacity:.75;
+    margin-top:8px;
+    font-size:13px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .main-grid,
+    .analysis-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .hero-card{
+        width:100%;
+    }
+}
+
+@media(max-width:600px){
+    nav{
+        display:none;
+    }
+
+    .hero h2{
+        font-size:32px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:40px 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">
+        <div class="logo-icon">⛰️</div>
+        <div>
+            <h1>LANDSAFE AI</h1>
+            <p>Landslide Risk Monitoring System</p>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#monitoring">Monitoring</a>
+        <a href="#prediction">Prediction</a>
+        <a href="#alerts">Alerts</a>
+    </nav>
+</header>
+
+
+<!-- HERO -->
+<div class="hero">
+
+    <div class="hero-text">
+
+        <span class="badge">🤖 AI-POWERED EARLY WARNING SYSTEM</span>
+
+        <h2>
+            Landslide Risk Monitoring
+            <span>for Northeast India</span>
+        </h2>
+
+        <p>
+            An intelligent monitoring platform designed to analyze
+            rainfall, soil moisture, terrain and environmental conditions
+            to identify potential landslide risk and provide early warnings.
+        </p>
+
+    </div>
+
+    <div class="hero-card">
+
+        <h3>🟢 System Status</h3>
+
+        <div class="status">
+            <span>AI Model</span>
+            <strong style="color:#2ca66f;">Online</strong>
+        </div>
+
+        <div class="status">
+            <span>Weather Data</span>
+            <strong style="color:#2ca66f;">Active</strong>
+        </div>
+
+        <div class="status">
+            <span>Risk Monitoring</span>
+            <strong style="color:#2ca66f;">Running</strong>
+        </div>
+
+        <div class="status">
+            <span>Last Update</span>
+            <strong>Just Now</strong>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- DASHBOARD -->
+<section id="dashboard">
+
+    <div class="section-title">
+        <h2>📊 Risk Monitoring Dashboard</h2>
+        <p>Current environmental indicators across monitored areas</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card blue">
+            <div class="card-icon">🌧️</div>
+            <h3>142 mm</h3>
+            <p>24-Hour Rainfall</p>
+        </div>
+
+        <div class="card yellow">
+            <div class="card-icon">💧</div>
+            <h3>72%</h3>
+            <p>Soil Moisture</p>
+        </div>
+
+        <div class="card red">
+            <div class="card-icon">⚠️</div>
+            <h3>68%</h3>
+            <p>Average Risk Score</p>
+        </div>
+
+        <div class="card green">
+            <div class="card-icon">📍</div>
+            <h3>24</h3>
+            <p>Monitored Locations</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MONITORING -->
+<section id="monitoring">
+
+    <div class="section-title">
+        <h2>🗺️ Regional Risk Monitoring</h2>
+        <p>Illustrative monitoring map of Northeast India</p>
+    </div>
+
+    <div class="main-grid">
+
+        <div class="map">
+
+            <div class="marker red-marker m1"
+                 title="High Risk Area"></div>
+
+            <div class="marker yellow-marker m2"
+                 title="Medium Risk Area"></div>
+
+            <div class="marker green-marker m3"
+                 title="Low Risk Area"></div>
+
+            <div class="marker red-marker m4"
+                 title="High Risk Area"></div>
+
+            <div class="marker yellow-marker m5"
+                 title="Medium Risk Area"></div>
+
+            <div class="map-line"></div>
+
+            <div class="map-label">
+                🔴 High Risk &nbsp;&nbsp;
+                🟡 Medium Risk &nbsp;&nbsp;
+                🟢 Low Risk
+            </div>
+
+        </div>
+
+
+        <!-- ALERTS -->
+        <div id="alerts">
+
+            <h2 style="margin-bottom:18px;">🚨 Early Warning Alerts</h2>
+
+            <div class="alert alert-high">
+                <strong>🔴 HIGH RISK — Area A</strong>
+                <p>
+                    Heavy rainfall and high soil moisture detected.
+                    Immediate monitoring recommended.
+                </p>
+            </div>
+
+            <div class="alert alert-medium">
+                <strong>🟡 MEDIUM RISK — Area B</strong>
+                <p>
+                    Increasing rainfall trend detected.
+                    Continue observation.
+                </p>
+            </div>
+
+            <div class="alert alert-low">
+                <strong>🟢 LOW RISK — Area C</strong>
+                <p>
+                    Environmental conditions currently stable.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- AI PREDICTION -->
+<section id="prediction">
+
+    <div class="prediction">
+
+        <h2>🤖 AI Landslide Risk Prediction</h2>
+
+        <p style="margin-top:8px;opacity:.85;">
+            Enter environmental parameters to generate a demo risk assessment.
+        </p>
+
+        <div class="form-grid">
+
+            <div>
+                <label>Rainfall (mm)</label>
+                <input type="number" id="rainfall"
+                       placeholder="Example: 150">
+            </div>
+
+            <div>
+                <label>Soil Moisture (%)</label>
+                <input type="number" id="soil"
+                       placeholder="Example: 70">
+            </div>
+
+            <div>
+                <label>Slope Angle (°)</label>
+                <input type="number" id="slope"
+                       placeholder="Example: 35">
+            </div>
+
+            <div>
+                <label>Terrain Type</label>
+
+                <select id="terrain">
+                    <option value="1">Stable / Plain</option>
+                    <option value="2">Hilly</option>
+                    <option value="3">Steep Mountain</option>
+                </select>
+            </div>
+
+        </div>
+
+        <button class="predict-btn" onclick="predictRisk()">
+            🔍 ANALYZE LANDSLIDE RISK
+        </button>
+
+
+        <div class="result" id="result">
+
+            <h3 style="text-align:center;">
+                AI Risk Assessment
+            </h3>
+
+            <div class="risk-circle" id="riskCircle">
+                78%
+            </div>
+
+            <h2 style="text-align:center;" id="riskText">
+                HIGH RISK
+            </h2>
+
+            <p style="text-align:center;margin-top:10px;"
+               id="riskMessage">
+                Increased possibility of landslide activity.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ANALYSIS -->
+<section>
+
+    <div class="section-title">
+        <h2>📈 Risk Factor Analysis</h2>
+        <p>Major parameters contributing to landslide probability</p>
+    </div>
+
+    <div class="analysis-grid">
+
+        <div class="chart">
+
+            <h3>Environmental Risk Factors</h3>
+
+            <div class="bar">
+
+                <div class="bar-title">
+                    <span>Rainfall Intensity</span>
+                    <strong>82%</strong>
+                </div>
+
+                <div class="bar-bg">
+                    <div class="bar-fill fill1"></div>
+                </div>
+
+            </div>
+
+
+            <div class="bar">
+
+                <div class="bar-title">
+                    <span>Soil Moisture</span>
+                    <strong>68%</strong>
+                </div>
+
+                <div class="bar-bg">
+                    <div class="bar-fill fill2"></div>
+                </div>
+
+            </div>
+
+
+            <div class="bar">
+
+                <div class="bar-title">
+                    <span>Slope Instability</span>
+                    <strong>52%</strong>
+                </div>
+
+                <div class="bar-bg">
+                    <div class="bar-fill fill3"></div>
+                </div>
+
+            </div>
+
+
+            <div class="bar">
+
+                <div class="bar-title">
+                    <span>Vegetation Stability</span>
+                    <strong>37%</strong>
+                </div>
+
+                <div class="bar-bg">
+                    <div class="bar-fill fill4"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="chart">
+
+            <h3>🛰️ Monitoring Technology</h3>
+
+            <div style="margin-top:20px;line-height:2;">
+
+                <p>🛰️ <strong>Satellite Data</strong></p>
+                <p style="color:#687286;font-size:14px;">
+                    Terrain and land-surface monitoring
+                </p>
+
+                <hr style="margin:15px 0;border:none;border-top:1px solid #eee;">
+
+                <p>🌧️ <strong>Rainfall Monitoring</strong></p>
+                <p style="color:#687286;font-size:14px;">
+                    Rainfall intensity and accumulation analysis
+                </p>
+
+                <hr style="margin:15px 0;border:none;border-top:1px solid #eee;">
+
+                <p>🤖 <strong>AI Risk Model</strong></p>
+                <p style="color:#687286;font-size:14px;">
+                    Multi-factor risk assessment
+                </p>
+
+                <hr style="margin:15px 0;border:none;border-top:1px solid #eee;">
+
+                <p>🚨 <strong>Early Warning</strong></p>
+                <p style="color:#687286;font-size:14px;">
+                    Risk-based warning generation
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LOCATION TABLE -->
+<section>
+
+    <div class="section-title">
+        <h2>📍 Monitored Locations</h2>
+        <p>Current risk status of selected monitoring points</p>
+    </div>
+
+    <div class="table-box">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Location</th>
+                    <th>Rainfall</th>
+                    <th>Soil Moisture</th>
+                    <th>Risk Score</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Shillong</td>
+                    <td>156 mm</td>
+                    <td>76%</td>
+                    <td>82%</td>
+                    <td class="risk-high">HIGH</td>
+                </tr>
+
+                <tr>
+                    <td>Guwahati</td>
+                    <td>108 mm</td>
+                    <td>61%</td>
+                    <td>57%</td>
+                    <td class="risk-medium">MEDIUM</td>
+                </tr>
+
+                <tr>
+                    <td>Aizawl</td>
+                    <td>94 mm</td>
+                    <td>55%</td>
+                    <td>43%</td>
+                    <td class="risk-medium">MEDIUM</td>
+                </tr>
+
+                <tr>
+                    <td>Gangtok</td>
+                    <td>62 mm</td>
+                    <td>42%</td>
+                    <td>28%</td>
+                    <td class="risk-low">LOW</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <h2>⛰️ LANDSAFE AI</h2>
+
+    <p>
+        AI-Based Early Warning & Landslide Risk Monitoring System
+        for Northeast India
+    </p>
+
+    <p>
+        Prototype for Smart Disaster Management
+    </p>
+
+</footer>
+
+
+<script>
+
+function predictRisk(){
+
+    let rainfall =
+        Number(document.getElementById("rainfall").value);
+
+    let soil =
+        Number(document.getElementById("soil").value);
+
+    let slope =
+        Number(document.getElementById("slope").value);
+
+    let terrain =
+        Number(document.getElementById("terrain").value);
+
+
+    if(!rainfall || !soil || !slope){
+
+        alert("Please enter all environmental values.");
+
+        return;
+    }
+
+
+    /*
+      DEMO RISK CALCULATION
+
+      This is a frontend demonstration.
+      Actual project can later connect
+      an ML model/API here.
+    */
+
+    let rainfallScore =
+        Math.min(rainfall / 2, 40);
+
+    let soilScore =
+        Math.min(soil * 0.25, 20);
+
+    let slopeScore =
+        Math.min(slope * 0.5, 25);
+
+    let terrainScore =
+        terrain * 5;
+
+
+    let risk =
+        rainfallScore +
+        soilScore +
+        slopeScore +
+        terrainScore;
+
+
+    risk = Math.round(Math.min(risk,100));
+
+
+    let result =
+        document.getElementById("result");
+
+    let circle =
+        document.getElementById("riskCircle");
+
+    let riskText =
+        document.getElementById("riskText");
+
+    let message =
+        document.getElementById("riskMessage");
+
+
+    result.style.display="block";
+
+    circle.innerText = risk + "%";
+
+
+    if(risk >= 70){
+
+        circle.style.borderColor="#e05252";
+
+        riskText.innerText="🔴 HIGH RISK";
+
+        riskText.style.color="#d53e3e";
+
+        message.innerText=
+        "High landslide probability detected. Immediate monitoring and precautionary action are recommended.";
+
+    }
+
+    else if(risk >= 40){
+
+        circle.style.borderColor="#f2b134";
+
+        riskText.innerText="🟡 MEDIUM RISK";
+
+        riskText.style.color="#bd8300";
+
+        message.innerText=
+        "Moderate landslide risk detected. Continue monitoring environmental conditions.";
+
+    }
+
+    else{
+
+        circle.style.borderColor="#2ca66f";
+
+        riskText.innerText="🟢 LOW RISK";
+
+        riskText.style.color="#278154";
+
+        message.innerText=
+        "Current environmental conditions indicate relatively low landslide risk.";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
