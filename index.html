@@ -4,14 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Landslide Risk Monitoring System</title>
+<title>LANDSAFE AI - Landslide Risk Monitoring System</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 body{
@@ -19,7 +20,8 @@ body{
     color:#172033;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
+
 header{
     background:linear-gradient(135deg,#0b3954,#087e8b);
     color:white;
@@ -62,7 +64,8 @@ nav a:hover{
     text-decoration:underline;
 }
 
-/* HERO */
+/* ================= HERO ================= */
+
 .hero{
     padding:70px 6%;
     background:linear-gradient(120deg,#e7f8f7,#eef5ff);
@@ -123,7 +126,8 @@ nav a:hover{
     border-radius:10px;
 }
 
-/* SECTION */
+/* ================= SECTION ================= */
+
 section{
     padding:55px 6%;
 }
@@ -142,7 +146,8 @@ section{
     color:#687286;
 }
 
-/* DASHBOARD CARDS */
+/* ================= CARDS ================= */
+
 .cards{
     display:grid;
     grid-template-columns:repeat(4,1fr);
@@ -176,14 +181,16 @@ section{
 .red{border-left:5px solid #e05252;}
 .blue{border-left:5px solid #4385d4;}
 
-/* MAIN GRID */
+/* ================= MAIN GRID ================= */
+
 .main-grid{
     display:grid;
     grid-template-columns:1.5fr 1fr;
     gap:25px;
 }
 
-/* MAP */
+/* ================= MAP ================= */
+
 .map{
     height:430px;
     border-radius:18px;
@@ -255,7 +262,8 @@ section{
     font-size:13px;
 }
 
-/* ALERTS */
+/* ================= ALERTS ================= */
+
 .alert{
     padding:18px;
     border-radius:12px;
@@ -286,7 +294,8 @@ section{
     color:#26704c;
 }
 
-/* PREDICTION */
+/* ================= PREDICTION ================= */
+
 .prediction{
     background:linear-gradient(135deg,#0b3954,#087e8b);
     color:white;
@@ -354,7 +363,8 @@ input,select{
     margin:15px auto;
 }
 
-/* ANALYSIS */
+/* ================= ANALYSIS ================= */
+
 .analysis-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -395,7 +405,8 @@ input,select{
 .fill3{width:52%;background:#4385d4;}
 .fill4{width:37%;background:#2ca66f;}
 
-/* TABLE */
+/* ================= TABLE ================= */
+
 .table-box{
     overflow-x:auto;
     background:white;
@@ -434,7 +445,196 @@ th{
     font-weight:bold;
 }
 
-/* FOOTER */
+/* ================= NEW FEATURE CARDS ================= */
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
+}
+
+.feature-card{
+    background:white;
+    padding:22px 15px;
+    border-radius:16px;
+    text-align:center;
+    box-shadow:0 7px 25px rgba(0,0,0,.07);
+    cursor:pointer;
+    transition:.25s;
+    border-top:4px solid #087e8b;
+}
+
+.feature-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+
+.feature-icon{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.feature-card h3{
+    font-size:16px;
+    margin-bottom:7px;
+}
+
+.feature-card p{
+    color:#687286;
+    font-size:12px;
+}
+
+/* ================= FEATURE PANEL ================= */
+
+.feature-panel{
+    display:none;
+    background:white;
+    padding:28px;
+    margin-top:25px;
+    border-radius:18px;
+    box-shadow:0 7px 25px rgba(0,0,0,.08);
+}
+
+.feature-panel h2{
+    margin-bottom:10px;
+    color:#0b3954;
+}
+
+.feature-panel p{
+    color:#687286;
+    line-height:1.6;
+}
+
+/* ================= OFFLINE STATUS ================= */
+
+.connection-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#f6f8fb;
+    padding:14px;
+    border-radius:10px;
+    margin-top:15px;
+}
+
+.connection-dot{
+    width:13px;
+    height:13px;
+    background:#2ca66f;
+    border-radius:50%;
+}
+
+.connection-dot.offline{
+    background:#f2b134;
+}
+
+/* ================= HISTORY ================= */
+
+.history-item{
+    background:#f6f8fb;
+    padding:16px;
+    border-radius:12px;
+    margin-top:12px;
+    border-left:5px solid #087e8b;
+}
+
+.history-item strong{
+    display:block;
+    margin-bottom:7px;
+}
+
+.history-item div{
+    font-size:14px;
+    margin:4px 0;
+}
+
+.history-item small{
+    color:#687286;
+}
+
+/* ================= SAFETY ================= */
+
+.safety-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:18px;
+}
+
+.safety-card{
+    padding:20px;
+    border-radius:13px;
+    background:#f6f8fb;
+}
+
+.safety-card h3{
+    margin-bottom:8px;
+}
+
+.safety-card p{
+    font-size:14px;
+}
+
+/* ================= OFFLINE CALCULATOR ================= */
+
+.offline-calc{
+    background:linear-gradient(135deg,#e7f8f7,#eef5ff);
+    padding:22px;
+    border-radius:15px;
+    margin-top:15px;
+}
+
+.offline-calc-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:15px;
+}
+
+.calc-btn{
+    width:100%;
+    margin-top:18px;
+    padding:13px;
+    border:none;
+    border-radius:9px;
+    background:#087e8b;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.calc-result{
+    display:none;
+    margin-top:18px;
+    padding:18px;
+    border-radius:12px;
+    background:white;
+    text-align:center;
+}
+
+/* ================= SYNC ================= */
+
+.sync-box{
+    background:#f6f8fb;
+    padding:22px;
+    border-radius:15px;
+    margin-top:15px;
+    text-align:center;
+}
+
+.sync-btn{
+    padding:13px 25px;
+    border:none;
+    border-radius:9px;
+    background:#087e8b;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+/* ================= FOOTER ================= */
+
 footer{
     background:#0b3954;
     color:white;
@@ -448,9 +648,15 @@ footer p{
     font-size:13px;
 }
 
-/* RESPONSIVE */
-@media(max-width:900px){
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1000px){
+
     .cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .feature-grid{
         grid-template-columns:repeat(2,1fr);
     }
 
@@ -459,492 +665,1060 @@ footer p{
         grid-template-columns:1fr;
     }
 
-    .hero{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .hero-card{
-        width:100%;
-    }
 }
 
 @media(max-width:600px){
+
     nav{
         display:none;
+    }
+
+    .hero{
+        flex-direction:column;
+        align-items:flex-start;
     }
 
     .hero h2{
         font-size:32px;
     }
 
+    .hero-card{
+        width:100%;
+    }
+
     .cards{
         grid-template-columns:1fr;
     }
 
-    .form-grid{
+    .form-grid,
+    .offline-calc-grid,
+    .safety-grid{
+        grid-template-columns:1fr;
+    }
+
+    .feature-grid{
         grid-template-columns:1fr;
     }
 
     section{
         padding:40px 5%;
     }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header>
-    <div class="logo">
-        <div class="logo-icon">⛰️</div>
-        <div>
-            <h1>LANDSAFE AI</h1>
-            <p>Landslide Risk Monitoring System</p>
-        </div>
-    </div>
+<!-- ================= HEADER ================= -->
 
-    <nav>
-        <a href="#dashboard">Dashboard</a>
-        <a href="#monitoring">Monitoring</a>
-        <a href="#prediction">Prediction</a>
-        <a href="#alerts">Alerts</a>
-    </nav>
+<header>
+
+<div class="logo">
+
+<div class="logo-icon">⛰️</div>
+
+<div>
+<h1>LANDSAFE AI</h1>
+<p>Landslide Risk Monitoring System</p>
+</div>
+
+</div>
+
+<nav>
+
+<a href="#dashboard">Dashboard</a>
+<a href="#monitoring">Monitoring</a>
+<a href="#prediction">Prediction</a>
+<a href="#offline">Offline Support</a>
+<a href="#alerts">Alerts</a>
+
+</nav>
+
 </header>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
+
 <div class="hero">
 
-    <div class="hero-text">
+<div class="hero-text">
 
-        <span class="badge">🤖 AI-POWERED EARLY WARNING SYSTEM</span>
+<span class="badge">
+🤖 AI-POWERED EARLY WARNING SYSTEM
+</span>
 
-        <h2>
-            Landslide Risk Monitoring
-            <span>for Northeast India</span>
-        </h2>
+<h2>
+Landslide Risk Monitoring
+<span>for Northeast India</span>
+</h2>
 
-        <p>
-            An intelligent monitoring platform designed to analyze
-            rainfall, soil moisture, terrain and environmental conditions
-            to identify potential landslide risk and provide early warnings.
-        </p>
-
-    </div>
-
-    <div class="hero-card">
-
-        <h3>🟢 System Status</h3>
-
-        <div class="status">
-            <span>AI Model</span>
-            <strong style="color:#2ca66f;">Online</strong>
-        </div>
-
-        <div class="status">
-            <span>Weather Data</span>
-            <strong style="color:#2ca66f;">Active</strong>
-        </div>
-
-        <div class="status">
-            <span>Risk Monitoring</span>
-            <strong style="color:#2ca66f;">Running</strong>
-        </div>
-
-        <div class="status">
-            <span>Last Update</span>
-            <strong>Just Now</strong>
-        </div>
-
-    </div>
+<p>
+An intelligent monitoring platform designed to analyze
+rainfall, soil moisture, terrain and environmental conditions
+to identify potential landslide risk and provide early warnings.
+</p>
 
 </div>
 
 
-<!-- DASHBOARD -->
+<div class="hero-card">
+
+<h3>🟢 System Status</h3>
+
+<div class="status">
+<span>AI Model</span>
+<strong style="color:#2ca66f;">Online</strong>
+</div>
+
+<div class="status">
+<span>Weather Data</span>
+<strong style="color:#2ca66f;">Active</strong>
+</div>
+
+<div class="status">
+<span>Risk Monitoring</span>
+<strong style="color:#2ca66f;">Running</strong>
+</div>
+
+<div class="status">
+<span>Last Update</span>
+<strong>Just Now</strong>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= DASHBOARD ================= -->
+
 <section id="dashboard">
 
-    <div class="section-title">
-        <h2>📊 Risk Monitoring Dashboard</h2>
-        <p>Current environmental indicators across monitored areas</p>
-    </div>
+<div class="section-title">
 
-    <div class="cards">
+<h2>📊 Risk Monitoring Dashboard</h2>
 
-        <div class="card blue">
-            <div class="card-icon">🌧️</div>
-            <h3>142 mm</h3>
-            <p>24-Hour Rainfall</p>
-        </div>
+<p>
+Current environmental indicators across monitored areas
+</p>
 
-        <div class="card yellow">
-            <div class="card-icon">💧</div>
-            <h3>72%</h3>
-            <p>Soil Moisture</p>
-        </div>
+</div>
 
-        <div class="card red">
-            <div class="card-icon">⚠️</div>
-            <h3>68%</h3>
-            <p>Average Risk Score</p>
-        </div>
 
-        <div class="card green">
-            <div class="card-icon">📍</div>
-            <h3>24</h3>
-            <p>Monitored Locations</p>
-        </div>
+<div class="cards">
 
-    </div>
+<div class="card blue">
+
+<div class="card-icon">🌧️</div>
+
+<h3>142 mm</h3>
+
+<p>24-Hour Rainfall</p>
+
+</div>
+
+
+<div class="card yellow">
+
+<div class="card-icon">💧</div>
+
+<h3>72%</h3>
+
+<p>Soil Moisture</p>
+
+</div>
+
+
+<div class="card red">
+
+<div class="card-icon">⚠️</div>
+
+<h3>68%</h3>
+
+<p>Average Risk Score</p>
+
+</div>
+
+
+<div class="card green">
+
+<div class="card-icon">📍</div>
+
+<h3>24</h3>
+
+<p>Monitored Locations</p>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- MONITORING -->
+<!-- ================= MONITORING ================= -->
+
 <section id="monitoring">
 
-    <div class="section-title">
-        <h2>🗺️ Regional Risk Monitoring</h2>
-        <p>Illustrative monitoring map of Northeast India</p>
-    </div>
+<div class="section-title">
 
-    <div class="main-grid">
+<h2>🗺️ Regional Risk Monitoring</h2>
 
-        <div class="map">
+<p>Illustrative monitoring map of Northeast India</p>
 
-            <div class="marker red-marker m1"
-                 title="High Risk Area"></div>
-
-            <div class="marker yellow-marker m2"
-                 title="Medium Risk Area"></div>
-
-            <div class="marker green-marker m3"
-                 title="Low Risk Area"></div>
-
-            <div class="marker red-marker m4"
-                 title="High Risk Area"></div>
-
-            <div class="marker yellow-marker m5"
-                 title="Medium Risk Area"></div>
-
-            <div class="map-line"></div>
-
-            <div class="map-label">
-                🔴 High Risk &nbsp;&nbsp;
-                🟡 Medium Risk &nbsp;&nbsp;
-                🟢 Low Risk
-            </div>
-
-        </div>
+</div>
 
 
-        <!-- ALERTS -->
-        <div id="alerts">
+<div class="main-grid">
 
-            <h2 style="margin-bottom:18px;">🚨 Early Warning Alerts</h2>
 
-            <div class="alert alert-high">
-                <strong>🔴 HIGH RISK — Area A</strong>
-                <p>
-                    Heavy rainfall and high soil moisture detected.
-                    Immediate monitoring recommended.
-                </p>
-            </div>
+<div class="map">
 
-            <div class="alert alert-medium">
-                <strong>🟡 MEDIUM RISK — Area B</strong>
-                <p>
-                    Increasing rainfall trend detected.
-                    Continue observation.
-                </p>
-            </div>
+<div class="marker red-marker m1"
+title="High Risk Area"></div>
 
-            <div class="alert alert-low">
-                <strong>🟢 LOW RISK — Area C</strong>
-                <p>
-                    Environmental conditions currently stable.
-                </p>
-            </div>
+<div class="marker yellow-marker m2"
+title="Medium Risk Area"></div>
 
-        </div>
+<div class="marker green-marker m3"
+title="Low Risk Area"></div>
 
-    </div>
+<div class="marker red-marker m4"
+title="High Risk Area"></div>
+
+<div class="marker yellow-marker m5"
+title="Medium Risk Area"></div>
+
+<div class="map-line"></div>
+
+<div class="map-label">
+
+🔴 High Risk &nbsp;&nbsp;
+🟡 Medium Risk &nbsp;&nbsp;
+🟢 Low Risk
+
+</div>
+
+</div>
+
+
+<!-- ALERTS -->
+
+<div id="alerts">
+
+<h2 style="margin-bottom:18px;">
+🚨 Early Warning Alerts
+</h2>
+
+
+<div class="alert alert-high">
+
+<strong>🔴 HIGH RISK — Area A</strong>
+
+<p>
+Heavy rainfall and high soil moisture detected.
+Immediate monitoring recommended.
+</p>
+
+</div>
+
+
+<div class="alert alert-medium">
+
+<strong>🟡 MEDIUM RISK — Area B</strong>
+
+<p>
+Increasing rainfall trend detected.
+Continue observation.
+</p>
+
+</div>
+
+
+<div class="alert alert-low">
+
+<strong>🟢 LOW RISK — Area C</strong>
+
+<p>
+Environmental conditions currently stable.
+</p>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- AI PREDICTION -->
+<!-- ================= PREDICTION ================= -->
+
 <section id="prediction">
 
-    <div class="prediction">
+<div class="prediction">
 
-        <h2>🤖 AI Landslide Risk Prediction</h2>
+<h2>🤖 AI Landslide Risk Prediction</h2>
 
-        <p style="margin-top:8px;opacity:.85;">
-            Enter environmental parameters to generate a demo risk assessment.
-        </p>
+<p style="margin-top:8px;opacity:.85;">
 
-        <div class="form-grid">
+Enter environmental parameters to generate a demo risk assessment.
 
-            <div>
-                <label>Rainfall (mm)</label>
-                <input type="number" id="rainfall"
-                       placeholder="Example: 150">
-            </div>
-
-            <div>
-                <label>Soil Moisture (%)</label>
-                <input type="number" id="soil"
-                       placeholder="Example: 70">
-            </div>
-
-            <div>
-                <label>Slope Angle (°)</label>
-                <input type="number" id="slope"
-                       placeholder="Example: 35">
-            </div>
-
-            <div>
-                <label>Terrain Type</label>
-
-                <select id="terrain">
-                    <option value="1">Stable / Plain</option>
-                    <option value="2">Hilly</option>
-                    <option value="3">Steep Mountain</option>
-                </select>
-            </div>
-
-        </div>
-
-        <button class="predict-btn" onclick="predictRisk()">
-            🔍 ANALYZE LANDSLIDE RISK
-        </button>
+</p>
 
 
-        <div class="result" id="result">
+<div class="form-grid">
 
-            <h3 style="text-align:center;">
-                AI Risk Assessment
-            </h3>
 
-            <div class="risk-circle" id="riskCircle">
-                78%
-            </div>
+<div>
 
-            <h2 style="text-align:center;" id="riskText">
-                HIGH RISK
-            </h2>
+<label>Rainfall (mm)</label>
 
-            <p style="text-align:center;margin-top:10px;"
-               id="riskMessage">
-                Increased possibility of landslide activity.
-            </p>
+<input type="number"
+id="rainfall"
+placeholder="Example: 150">
 
-        </div>
+</div>
 
-    </div>
+
+<div>
+
+<label>Soil Moisture (%)</label>
+
+<input type="number"
+id="soil"
+placeholder="Example: 70">
+
+</div>
+
+
+<div>
+
+<label>Slope Angle (°)</label>
+
+<input type="number"
+id="slope"
+placeholder="Example: 35">
+
+</div>
+
+
+<div>
+
+<label>Terrain Type</label>
+
+<select id="terrain">
+
+<option value="1">
+Stable / Plain
+</option>
+
+<option value="2">
+Hilly
+</option>
+
+<option value="3">
+Steep Mountain
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<button class="predict-btn"
+onclick="predictRisk()">
+
+🔍 ANALYZE LANDSLIDE RISK
+
+</button>
+
+
+<div class="result" id="result">
+
+<h3 style="text-align:center;">
+AI Risk Assessment
+</h3>
+
+<div class="risk-circle"
+id="riskCircle">
+78%
+</div>
+
+<h2 style="text-align:center;"
+id="riskText">
+HIGH RISK
+</h2>
+
+<p style="text-align:center;margin-top:10px;"
+id="riskMessage">
+Increased possibility of landslide activity.
+</p>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ANALYSIS -->
+<!-- ================= ANALYSIS ================= -->
+
 <section>
 
-    <div class="section-title">
-        <h2>📈 Risk Factor Analysis</h2>
-        <p>Major parameters contributing to landslide probability</p>
-    </div>
+<div class="section-title">
 
-    <div class="analysis-grid">
+<h2>📈 Risk Factor Analysis</h2>
 
-        <div class="chart">
+<p>
+Major parameters contributing to landslide probability
+</p>
 
-            <h3>Environmental Risk Factors</h3>
-
-            <div class="bar">
-
-                <div class="bar-title">
-                    <span>Rainfall Intensity</span>
-                    <strong>82%</strong>
-                </div>
-
-                <div class="bar-bg">
-                    <div class="bar-fill fill1"></div>
-                </div>
-
-            </div>
+</div>
 
 
-            <div class="bar">
-
-                <div class="bar-title">
-                    <span>Soil Moisture</span>
-                    <strong>68%</strong>
-                </div>
-
-                <div class="bar-bg">
-                    <div class="bar-fill fill2"></div>
-                </div>
-
-            </div>
+<div class="analysis-grid">
 
 
-            <div class="bar">
+<div class="chart">
 
-                <div class="bar-title">
-                    <span>Slope Instability</span>
-                    <strong>52%</strong>
-                </div>
-
-                <div class="bar-bg">
-                    <div class="bar-fill fill3"></div>
-                </div>
-
-            </div>
+<h3>Environmental Risk Factors</h3>
 
 
-            <div class="bar">
+<div class="bar">
 
-                <div class="bar-title">
-                    <span>Vegetation Stability</span>
-                    <strong>37%</strong>
-                </div>
+<div class="bar-title">
 
-                <div class="bar-bg">
-                    <div class="bar-fill fill4"></div>
-                </div>
+<span>Rainfall Intensity</span>
 
-            </div>
+<strong>82%</strong>
 
-        </div>
+</div>
+
+<div class="bar-bg">
+
+<div class="bar-fill fill1"></div>
+
+</div>
+
+</div>
 
 
-        <div class="chart">
+<div class="bar">
 
-            <h3>🛰️ Monitoring Technology</h3>
+<div class="bar-title">
 
-            <div style="margin-top:20px;line-height:2;">
+<span>Soil Moisture</span>
 
-                <p>🛰️ <strong>Satellite Data</strong></p>
-                <p style="color:#687286;font-size:14px;">
-                    Terrain and land-surface monitoring
-                </p>
+<strong>68%</strong>
 
-                <hr style="margin:15px 0;border:none;border-top:1px solid #eee;">
+</div>
 
-                <p>🌧️ <strong>Rainfall Monitoring</strong></p>
-                <p style="color:#687286;font-size:14px;">
-                    Rainfall intensity and accumulation analysis
-                </p>
+<div class="bar-bg">
 
-                <hr style="margin:15px 0;border:none;border-top:1px solid #eee;">
+<div class="bar-fill fill2"></div>
 
-                <p>🤖 <strong>AI Risk Model</strong></p>
-                <p style="color:#687286;font-size:14px;">
-                    Multi-factor risk assessment
-                </p>
+</div>
 
-                <hr style="margin:15px 0;border:none;border-top:1px solid #eee;">
+</div>
 
-                <p>🚨 <strong>Early Warning</strong></p>
-                <p style="color:#687286;font-size:14px;">
-                    Risk-based warning generation
-                </p>
 
-            </div>
+<div class="bar">
 
-        </div>
+<div class="bar-title">
 
-    </div>
+<span>Slope Instability</span>
+
+<strong>52%</strong>
+
+</div>
+
+<div class="bar-bg">
+
+<div class="bar-fill fill3"></div>
+
+</div>
+
+</div>
+
+
+<div class="bar">
+
+<div class="bar-title">
+
+<span>Vegetation Stability</span>
+
+<strong>37%</strong>
+
+</div>
+
+<div class="bar-bg">
+
+<div class="bar-fill fill4"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="chart">
+
+<h3>🛰️ Monitoring Technology</h3>
+
+<div style="margin-top:20px;line-height:2;">
+
+<p>🛰️ <strong>Satellite Data</strong></p>
+
+<p style="color:#687286;font-size:14px;">
+Terrain and land-surface monitoring
+</p>
+
+<hr style="margin:15px 0;border:none;border-top:1px solid #eee;">
+
+
+<p>🌧️ <strong>Rainfall Monitoring</strong></p>
+
+<p style="color:#687286;font-size:14px;">
+Rainfall intensity and accumulation analysis
+</p>
+
+<hr style="margin:15px 0;border:none;border-top:1px solid #eee;">
+
+
+<p>🤖 <strong>AI Risk Model</strong></p>
+
+<p style="color:#687286;font-size:14px;">
+Multi-factor risk assessment
+</p>
+
+<hr style="margin:15px 0;border:none;border-top:1px solid #eee;">
+
+
+<p>🚨 <strong>Early Warning</strong></p>
+
+<p style="color:#687286;font-size:14px;">
+Risk-based warning generation
+</p>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- LOCATION TABLE -->
+<!-- ================= LOCATIONS ================= -->
+
 <section>
 
-    <div class="section-title">
-        <h2>📍 Monitored Locations</h2>
-        <p>Current risk status of selected monitoring points</p>
-    </div>
+<div class="section-title">
 
-    <div class="table-box">
+<h2>📍 Monitored Locations</h2>
 
-        <table>
+<p>
+Current risk status of selected monitoring points
+</p>
 
-            <thead>
-                <tr>
-                    <th>Location</th>
-                    <th>Rainfall</th>
-                    <th>Soil Moisture</th>
-                    <th>Risk Score</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
+</div>
 
-            <tbody>
 
-                <tr>
-                    <td>Shillong</td>
-                    <td>156 mm</td>
-                    <td>76%</td>
-                    <td>82%</td>
-                    <td class="risk-high">HIGH</td>
-                </tr>
+<div class="table-box">
 
-                <tr>
-                    <td>Guwahati</td>
-                    <td>108 mm</td>
-                    <td>61%</td>
-                    <td>57%</td>
-                    <td class="risk-medium">MEDIUM</td>
-                </tr>
+<table>
 
-                <tr>
-                    <td>Aizawl</td>
-                    <td>94 mm</td>
-                    <td>55%</td>
-                    <td>43%</td>
-                    <td class="risk-medium">MEDIUM</td>
-                </tr>
+<thead>
 
-                <tr>
-                    <td>Gangtok</td>
-                    <td>62 mm</td>
-                    <td>42%</td>
-                    <td>28%</td>
-                    <td class="risk-low">LOW</td>
-                </tr>
+<tr>
 
-            </tbody>
+<th>Location</th>
+<th>Rainfall</th>
+<th>Soil Moisture</th>
+<th>Risk Score</th>
+<th>Status</th>
 
-        </table>
+</tr>
 
-    </div>
+</thead>
+
+
+<tbody>
+
+<tr>
+
+<td>Shillong</td>
+<td>156 mm</td>
+<td>76%</td>
+<td>82%</td>
+<td class="risk-high">HIGH</td>
+
+</tr>
+
+
+<tr>
+
+<td>Guwahati</td>
+<td>108 mm</td>
+<td>61%</td>
+<td>57%</td>
+<td class="risk-medium">MEDIUM</td>
+
+</tr>
+
+
+<tr>
+
+<td>Aizawl</td>
+<td>94 mm</td>
+<td>55%</td>
+<td>43%</td>
+<td class="risk-medium">MEDIUM</td>
+
+</tr>
+
+
+<tr>
+
+<td>Gangtok</td>
+<td>62 mm</td>
+<td>42%</td>
+<td>28%</td>
+<td class="risk-low">LOW</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- =====================================================
+     NEW OFFLINE SUPPORT
+===================================================== -->
+
+<section id="offline">
+
+<div class="section-title">
+
+<h2>📱 Offline Disaster Support</h2>
+
+<p>
+Useful monitoring and safety tools for areas with limited connectivity
+</p>
+
+</div>
+
+
+<!-- FEATURE BUTTONS -->
+
+<div class="feature-grid">
+
+
+<!-- 1 OFFLINE MODE -->
+
+<div class="feature-card"
+onclick="showFeature('offlinePanel')">
+
+<div class="feature-icon">📶</div>
+
+<h3>Offline Mode</h3>
+
+<p>
+Check connectivity status
+</p>
+
+</div>
+
+
+<!-- 2 CALCULATOR -->
+
+<div class="feature-card"
+onclick="showFeature('calculatorPanel')">
+
+<div class="feature-icon">🧮</div>
+
+<h3>Offline Calculator</h3>
+
+<p>
+Calculate risk locally
+</p>
+
+</div>
+
+
+<!-- 3 HISTORY -->
+
+<div class="feature-card"
+onclick="showFeature('historyPanel')">
+
+<div class="feature-icon">💾</div>
+
+<h3>Risk History</h3>
+
+<p>
+View saved assessments
+</p>
+
+</div>
+
+
+<!-- 4 SAFETY -->
+
+<div class="feature-card"
+onclick="showFeature('safetyPanel')">
+
+<div class="feature-icon">🆘</div>
+
+<h3>Safety Guide</h3>
+
+<p>
+Offline safety information
+</p>
+
+</div>
+
+
+<!-- 5 SYNC -->
+
+<div class="feature-card"
+onclick="showFeature('syncPanel')">
+
+<div class="feature-icon">🔄</div>
+
+<h3>Sync Data</h3>
+
+<p>
+Check saved data status
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ================= OFFLINE PANEL ================= -->
+
+<div class="feature-panel"
+id="offlinePanel">
+
+<h2>📶 Connectivity Status</h2>
+
+<p>
+The basic risk assessment functions of this prototype
+can work locally in the browser without requiring an internet connection.
+</p>
+
+
+<div class="connection-box">
+
+<div class="connection-dot"
+id="connectionDot">
+</div>
+
+<strong id="connectionText">
+Checking connection...
+</strong>
+
+</div>
+
+<p style="margin-top:15px;font-size:13px;">
+Offline features available: Risk Calculator, Risk History and Safety Guide.
+</p>
+
+</div>
+
+
+<!-- ================= CALCULATOR ================= -->
+
+<div class="feature-panel"
+id="calculatorPanel">
+
+<h2>🧮 Offline Risk Calculator</h2>
+
+<p>
+This calculator uses local JavaScript logic and does not require an internet connection.
+</p>
+
+
+<div class="offline-calc">
+
+<div class="offline-calc-grid">
+
+
+<div>
+
+<label>Rainfall (mm)</label>
+
+<input type="number"
+id="offlineRainfall"
+placeholder="Example: 150">
+
+</div>
+
+
+<div>
+
+<label>Soil Moisture (%)</label>
+
+<input type="number"
+id="offlineSoil"
+placeholder="Example: 70">
+
+</div>
+
+
+<div>
+
+<label>Slope Angle (°)</label>
+
+<input type="number"
+id="offlineSlope"
+placeholder="Example: 35">
+
+</div>
+
+
+<div>
+
+<label>Terrain Type</label>
+
+<select id="offlineTerrain">
+
+<option value="1">
+Stable / Plain
+</option>
+
+<option value="2">
+Hilly
+</option>
+
+<option value="3">
+Steep Mountain
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<button class="calc-btn"
+onclick="offlineCalculate()">
+
+🔍 CALCULATE RISK
+
+</button>
+
+
+<div class="calc-result"
+id="offlineResult">
+
+<h2 id="offlineRiskScore">
+0%
+</h2>
+
+<h3 id="offlineRiskStatus">
+Risk
+</h3>
+
+<p id="offlineRiskMessage"
+style="margin-top:8px;">
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= HISTORY ================= -->
+
+<div class="feature-panel"
+id="historyPanel">
+
+<h2>💾 Local Risk History</h2>
+
+<p>
+Your latest risk assessments are stored locally in this browser.
+</p>
+
+<div id="historyList"></div>
+
+</div>
+
+
+<!-- ================= SAFETY GUIDE ================= -->
+
+<div class="feature-panel"
+id="safetyPanel">
+
+<h2>🆘 Offline Landslide Safety Guide</h2>
+
+<p>
+This information is available without internet access.
+</p>
+
+
+<div class="safety-grid">
+
+
+<div class="safety-card">
+
+<h3>⚠️ Before a Landslide</h3>
+
+<p>
+Monitor rainfall and official warnings.
+Keep basic emergency supplies ready and avoid unnecessary
+travel near vulnerable slopes during severe weather.
+</p>
+
+</div>
+
+
+<div class="safety-card">
+
+<h3>🚨 During an Emergency</h3>
+
+<p>
+Move away from unstable slopes and follow instructions
+from local authorities and emergency services.
+</p>
+
+</div>
+
+
+<div class="safety-card">
+
+<h3>🏠 After a Landslide</h3>
+
+<p>
+Do not return to affected areas until authorities say it is safe.
+Watch for further ground movement and hazards.
+</p>
+
+</div>
+
+
+<div class="safety-card">
+
+<h3>🎒 Emergency Preparedness</h3>
+
+<p>
+Keep drinking water, basic first-aid supplies,
+a flashlight and important contact information ready.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= SYNC ================= -->
+
+<div class="feature-panel"
+id="syncPanel">
+
+<h2>🔄 Offline-to-Online Sync</h2>
+
+<p>
+Saved assessments remain available on the device.
+When a backend is connected, this section can be used
+for server synchronization.
+</p>
+
+
+<div class="sync-box">
+
+<h3 id="syncTitle">
+📦 Local Data Status
+</h3>
+
+<p id="syncText"
+style="margin-top:8px;">
+Checking saved assessments...
+</p>
+
+
+<button class="sync-btn"
+onclick="syncData()">
+
+🔄 CHECK SYNC STATUS
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
 
-    <h2>⛰️ LANDSAFE AI</h2>
+<h2>⛰️ LANDSAFE AI</h2>
 
-    <p>
-        AI-Based Early Warning & Landslide Risk Monitoring System
-        for Northeast India
-    </p>
+<p>
+AI-Based Early Warning & Landslide Risk Monitoring System
+for Northeast India
+</p>
 
-    <p>
-        Prototype for Smart Disaster Management
-    </p>
+<p>
+Prototype for Smart Disaster Management
+</p>
 
 </footer>
 
 
 <script>
+
+/* =====================================================
+   MAIN RISK PREDICTION
+===================================================== */
+
+function calculateRisk(rainfall,soil,slope,terrain){
+
+    let rainfallScore =
+        Math.min(rainfall / 2,40);
+
+    let soilScore =
+        Math.min(soil * 0.25,20);
+
+    let slopeScore =
+        Math.min(slope * 0.5,25);
+
+    let terrainScore =
+        terrain * 5;
+
+    let risk =
+        rainfallScore +
+        soilScore +
+        slopeScore +
+        terrainScore;
+
+    return Math.round(Math.min(risk,100));
+
+}
+
+
+/* =====================================================
+   MAIN PREDICTION
+===================================================== */
 
 function predictRisk(){
 
@@ -966,38 +1740,17 @@ function predictRisk(){
         alert("Please enter all environmental values.");
 
         return;
+
     }
 
 
-    /*
-      DEMO RISK CALCULATION
-
-      This is a frontend demonstration.
-      Actual project can later connect
-      an ML model/API here.
-    */
-
-    let rainfallScore =
-        Math.min(rainfall / 2, 40);
-
-    let soilScore =
-        Math.min(soil * 0.25, 20);
-
-    let slopeScore =
-        Math.min(slope * 0.5, 25);
-
-    let terrainScore =
-        terrain * 5;
-
-
     let risk =
-        rainfallScore +
-        soilScore +
-        slopeScore +
-        terrainScore;
-
-
-    risk = Math.round(Math.min(risk,100));
+        calculateRisk(
+            rainfall,
+            soil,
+            slope,
+            terrain
+        );
 
 
     let result =
@@ -1015,7 +1768,8 @@ function predictRisk(){
 
     result.style.display="block";
 
-    circle.innerText = risk + "%";
+    circle.innerText =
+        risk + "%";
 
 
     if(risk >= 70){
@@ -1057,7 +1811,512 @@ function predictRisk(){
 
     }
 
+
+    /* SAVE RESULT */
+
+    saveHistory(
+        rainfall,
+        soil,
+        slope,
+        terrain,
+        risk
+    );
+
 }
+
+
+/* =====================================================
+   SHOW FEATURE
+===================================================== */
+
+function showFeature(panelId){
+
+    const panels =
+        document.querySelectorAll(".feature-panel");
+
+
+    panels.forEach(function(panel){
+
+        panel.style.display="none";
+
+    });
+
+
+    const selected =
+        document.getElementById(panelId);
+
+
+    selected.style.display="block";
+
+
+    selected.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+    });
+
+
+    if(panelId==="offlinePanel"){
+
+        updateConnection();
+
+    }
+
+
+    if(panelId==="historyPanel"){
+
+        displayHistory();
+
+    }
+
+}
+
+
+/* =====================================================
+   CONNECTION STATUS
+===================================================== */
+
+function updateConnection(){
+
+    const dot =
+        document.getElementById("connectionDot");
+
+    const text =
+        document.getElementById("connectionText");
+
+
+    if(navigator.onLine){
+
+        dot.classList.remove("offline");
+
+        text.innerText=
+        "🟢 Internet Connected";
+
+    }
+
+    else{
+
+        dot.classList.add("offline");
+
+        text.innerText=
+        "🟠 Offline Mode — Local Features Available";
+
+    }
+
+}
+
+
+window.addEventListener(
+    "online",
+    updateConnection
+);
+
+window.addEventListener(
+    "offline",
+    updateConnection
+);
+
+
+/* =====================================================
+   OFFLINE CALCULATOR
+===================================================== */
+
+function offlineCalculate(){
+
+    let rainfall =
+        Number(
+            document.getElementById(
+                "offlineRainfall"
+            ).value
+        );
+
+    let soil =
+        Number(
+            document.getElementById(
+                "offlineSoil"
+            ).value
+        );
+
+    let slope =
+        Number(
+            document.getElementById(
+                "offlineSlope"
+            ).value
+        );
+
+    let terrain =
+        Number(
+            document.getElementById(
+                "offlineTerrain"
+            ).value
+        );
+
+
+    if(!rainfall || !soil || !slope){
+
+        alert(
+            "Please enter all environmental values."
+        );
+
+        return;
+
+    }
+
+
+    let risk =
+        calculateRisk(
+            rainfall,
+            soil,
+            slope,
+            terrain
+        );
+
+
+    let result =
+        document.getElementById(
+            "offlineResult"
+        );
+
+    let score =
+        document.getElementById(
+            "offlineRiskScore"
+        );
+
+    let status =
+        document.getElementById(
+            "offlineRiskStatus"
+        );
+
+    let message =
+        document.getElementById(
+            "offlineRiskMessage"
+        );
+
+
+    result.style.display="block";
+
+    score.innerText =
+        risk + "%";
+
+
+    if(risk>=70){
+
+        status.innerText =
+            "🔴 HIGH RISK";
+
+        status.style.color =
+            "#d53e3e";
+
+        message.innerText =
+            "High risk conditions detected. Follow official warnings and monitor the area.";
+
+    }
+
+    else if(risk>=40){
+
+        status.innerText =
+            "🟡 MEDIUM RISK";
+
+        status.style.color =
+            "#bd8300";
+
+        message.innerText =
+            "Moderate risk detected. Continue monitoring environmental conditions.";
+
+    }
+
+    else{
+
+        status.innerText =
+            "🟢 LOW RISK";
+
+        status.style.color =
+            "#278154";
+
+        message.innerText =
+            "Current conditions indicate relatively low risk.";
+
+    }
+
+
+    saveHistory(
+        rainfall,
+        soil,
+        slope,
+        terrain,
+        risk
+    );
+
+}
+
+
+/* =====================================================
+   SAVE HISTORY
+===================================================== */
+
+function saveHistory(
+    rainfall,
+    soil,
+    slope,
+    terrain,
+    risk
+){
+
+    let history =
+        JSON.parse(
+            localStorage.getItem(
+                "landslideHistory"
+            )
+        ) || [];
+
+
+    let terrainName =
+        "Stable / Plain";
+
+
+    if(terrain==2){
+
+        terrainName="Hilly";
+
+    }
+
+    else if(terrain==3){
+
+        terrainName="Steep Mountain";
+
+    }
+
+
+    let status="LOW";
+
+
+    if(risk>=70){
+
+        status="HIGH";
+
+    }
+
+    else if(risk>=40){
+
+        status="MEDIUM";
+
+    }
+
+
+    let assessment={
+
+        rainfall:rainfall,
+
+        soil:soil,
+
+        slope:slope,
+
+        terrain:terrainName,
+
+        risk:risk,
+
+        status:status,
+
+        time:new Date().toLocaleString()
+
+    };
+
+
+    history.unshift(
+        assessment
+    );
+
+
+    /* Keep latest 10 records */
+
+    history =
+        history.slice(0,10);
+
+
+    localStorage.setItem(
+        "landslideHistory",
+        JSON.stringify(history)
+    );
+
+}
+
+
+/* =====================================================
+   DISPLAY HISTORY
+===================================================== */
+
+function displayHistory(){
+
+    const list =
+        document.getElementById(
+            "historyList"
+        );
+
+
+    let history =
+        JSON.parse(
+            localStorage.getItem(
+                "landslideHistory"
+            )
+        ) || [];
+
+
+    if(history.length===0){
+
+        list.innerHTML=`
+
+        <div class="history-item">
+
+        <strong>
+        📭 No assessments saved yet
+        </strong>
+
+        <p>
+        Run a risk assessment to create your local history.
+        </p>
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    list.innerHTML="";
+
+
+    history.forEach(function(item){
+
+        let className="risk-low";
+
+
+        if(item.risk>=70){
+
+            className="risk-high";
+
+        }
+
+        else if(item.risk>=40){
+
+            className="risk-medium";
+
+        }
+
+
+        list.innerHTML += `
+
+        <div class="history-item">
+
+        <strong>
+
+        ${item.status} RISK —
+        <span class="${className}">
+        ${item.risk}%
+        </span>
+
+        </strong>
+
+        <div>
+        🌧️ Rainfall:
+        ${item.rainfall} mm
+        </div>
+
+        <div>
+        💧 Soil Moisture:
+        ${item.soil}%
+        </div>
+
+        <div>
+        ⛰️ Slope:
+        ${item.slope}°
+        </div>
+
+        <div>
+        🏔️ Terrain:
+        ${item.terrain}
+        </div>
+
+        <small>
+        Checked: ${item.time}
+        </small>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
+/* =====================================================
+   SYNC STATUS
+===================================================== */
+
+function syncData(){
+
+    let history =
+        JSON.parse(
+            localStorage.getItem(
+                "landslideHistory"
+            )
+        ) || [];
+
+
+    const title =
+        document.getElementById(
+            "syncTitle"
+        );
+
+    const text =
+        document.getElementById(
+            "syncText"
+        );
+
+
+    if(history.length===0){
+
+        title.innerText =
+            "📭 No Local Data";
+
+        text.innerText =
+            "There are no saved assessments to synchronize.";
+
+        return;
+
+    }
+
+
+    if(!navigator.onLine){
+
+        title.innerText =
+            "📶 Offline";
+
+        text.innerText =
+            history.length +
+            " saved assessment(s) are stored locally. They can be synchronized when internet is available.";
+
+        return;
+
+    }
+
+
+    title.innerText =
+        "🟢 Data Ready";
+
+    text.innerText =
+        history.length +
+        " saved assessment(s) are available. Backend/API synchronization can be connected here.";
+
+}
+
+
+/* =====================================================
+   INITIAL STATUS
+===================================================== */
+
+updateConnection();
 
 </script>
 
